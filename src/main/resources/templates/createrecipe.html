@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<div class= "header">
+
+
+        <ul>
+            <li class="header__logo">Refreshingly Mindless<span class="header__logo__tm">™</span></li>
+            
+        </ul>
+        <ul class="header__buttons">
+            <a href="/"><li class="header__home__button">Home</li></a>   
+        </ul>
+</div> <!-- headerClose -->
+
+
+<body></body>
+<div class = "add__recipe">
+    <h1>Create New Recipe</h1>
+
+    <div class= "recipe__title">
+        <h2>Title</h2>
+        <input type="text" class="title" id="headline" name="title" placeholder="Enter Recipe Name" maxlength="100" style="width: 500px;" autofocus required></input>
+    </div>
+
+    <div class = "add__Ingredients">
+        <h3>Ingredient</h3>
+        <input type="text" class="ingredName" id="ingreientName" name="ingredient.name" placeholder="Enter Ingredient Name" maxlength="100" style="width: 500px;" autofocus required></input>
+        
+        <input type="text" class="ingredAmt" id="ingreientAmt" name="ingredient.amount" placeholder="Enter Ingredient Amount" maxlength="50" style="width: 300px;" autofocus required></input>
+        
+        <input type="text" class="ingredMesType" id="ingredientMeasType" name="ingredient.measurementType" placeholder="Enter type of measurement" maxlength="250px" style="width: 300px;" autofocus required></input>
+        <input type="submit" name="submit" value="add" style="width: 100px;" required/> 
+    </div> 
+    <div class ="ingredient__list"> 
+            <ul class= "ingredient__add__ul">
+                    <li class="ingredient__list" th:each="ingredient : ${ingredients}">
+                            <span th:text="${ingredient.name}">Ingredient Name</span>
+                            <span th:text="${ingredient.amount}">Ingredient Amount</span>
+                            <span th:text="${ingredient.measurementType}">Ingredient Measurement</span>
+                        </li>
+            </ul>
+    </div>
+
+    <div class ="directions">
+        <h2>Directions</h2>
+        <textarea class="directionbox" id="directionbox" name="content" placeholder="Please enter directions." maxlength="500" style="width: 500px; height: 500px;" required></textarea>
+    </div>  
+
+    <div class= "photo">
+        <h4>Add a photo - copy and paste URL below.</h4>
+        <input type="textbox" name="imageURL" id="files" style="width: 500px"/>
+    </div>
+
+    <div class = "submit__recipe__button">
+        <input type="submit" name="submit" value="create recipe" style="width: 200px;" required/> 
+    </div>
+</div> <!--addRecipeClose -->
+
+
+
+
+
+
+    
+</body>
+</html>
